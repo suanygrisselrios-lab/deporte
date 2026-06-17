@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auréa Beauty | Maquillaje y Skincare de Lujo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Serif Elegante) & Montserrat (Sans-serif Limpio) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aurea: {
+                            gold: '#D4AF37',       // Oro clásico para detalles finos
+                            rosegold: '#E0A899',   // Oro rosa ultra femenino
+                            blush: '#FAF0ED',      // Fondo suave y cremoso
+                            dark: '#2A1F1D',       // Marrón/marrón oscuro muy premium
+                            accent: '#F3D1C9',     // Rosa de acento suave
+                            sand: '#FDFBF7'        // Color crema sofisticado
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para un acabado pulido */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FDFBF7;
+            color: #2A1F1D;
+        }
+        .text-glow {
+            text-shadow: 0 2px 10px rgba(224, 168, 153, 0.2);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-aurea-sand/90 backdrop-blur-md border-b border-aurea-accent/30 shadow-sm" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex flex-col">
+                    <a href="#" class="font-serif text-2xl sm:text-3xl tracking-widest font-semibold text-aurea-dark hover:text-aurea-rosegold transition-colors">
+                        AURÉA <span class="text-xs tracking-widest font-sans font-light block -mt-1 text-right text-aurea-gold">BEAUTY</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-widest">
+                    <a href="#inicio" class="text-aurea-dark hover:text-aurea-rosegold transition-colors py-2">INICIO</a>
+                    <a href="#productos" class="text-aurea-dark hover:text-aurea-rosegold transition-colors py-2">PRODUCTOS</a>
+                    <a href="#servicios" class="text-aurea-dark hover:text-aurea-rosegold transition-colors py-2">SERVICIOS</a>
+                    <a href="#quiz" class="text-aurea-dark hover:text-aurea-rosegold transition-colors py-2 bg-aurea-accent/40 px-3 rounded-full">SKIN QUIZ</a>
+                    <a href="#nosotros" class="text-aurea-dark hover:text-aurea-rosegold transition-colors py-2">NOSOTROS</a>
+                </nav>
+
+                <!-- Iconos de interacción -->
+                <div class="flex items-center space-x-4">
+                    <button id="cartBtn" class="relative p-2 text-aurea-dark hover:text-aurea-rosegold transition-colors focus:outline-none" aria-label="Carrito de compras">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cartCount" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xxs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-aurea-rosegold rounded-full text-[10px]">0</span>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-aurea-dark hover:text-aurea-rosegold transition-colors focus:outline-none" aria-label="Menú">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobileMenu" class="hidden md:hidden bg-aurea-sand border-b border-aurea-accent/40 px-4 pt-2 pb-6 space-y-3 transition-all duration-300">
+            <a href="#inicio" class="block text-sm font-medium tracking-widest text-aurea-dark py-2 border-b border-aurea-accent/20" onclick="toggleMenu()">INICIO</a>
+            <a href="#productos" class="block text-sm font-medium tracking-widest text-aurea-dark py-2 border-b border-aurea-accent/20" onclick="toggleMenu()">PRODUCTOS</a>
+            <a href="#servicios" class="block text-sm font-medium tracking-widest text-aurea-dark py-2 border-b border-aurea-accent/20" onclick="toggleMenu()">SERVICIOS</a>
+            <a href="#quiz" class="block text-sm font-medium tracking-widest text-aurea-rosegold py-2 border-b border-aurea-accent/20 font-bold" onclick="toggleMenu()">SKIN QUIZ</a>
+            <a href="#nosotros" class="block text-sm font-medium tracking-widest text-aurea-dark py-2" onclick="toggleMenu()">NOSOTROS</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen pt-20 flex items-center bg-gradient-to-tr from-[#FAF3F0] via-[#FDFBF7] to-[#FFF0EC] overflow-hidden">
+        <!-- Elementos de fondo decorativos -->
+        <div class="absolute top-1/4 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-aurea-accent/30 rounded-full filter blur-3xl opacity-60"></div>
+        <div class="absolute bottom-10 left-10 w-60 h-60 bg-aurea-rosegold/10 rounded-full filter blur-2xl opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Texto del Hero -->
+                <div class="space-y-6 text-center lg:text-left order-2 lg:order-1">
+                    <span class="inline-block text-xs font-semibold tracking-[0.3em] text-aurea-rosegold uppercase bg-aurea-accent/40 px-4 py-1.5 rounded-full">La ciencia del lujo y la belleza</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-aurea-dark leading-tight">
+                        Tu esencia, <br class="hidden sm:inline">
+                        <span class="italic text-aurea-rosegold font-light">iluminada</span> por el oro de la naturaleza.
+                    </h1>
+                    <p class="text-base sm:text-lg text-gray-600 font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        En <span class="font-semibold text-aurea-dark">Auréa Beauty</span> fusionamos el arte del maquillaje con la excelencia de tratamientos dermatológicos de nivel mundial. Redescubre el brillo de una piel verdaderamente sana.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#productos" class="px-8 py-4 bg-aurea-dark text-white rounded-full font-medium tracking-widest text-xs hover:bg-aurea-rosegold hover:shadow-lg transition-all duration-300 uppercase">
+                            Explorar Marcas
+                        </a>
+                        <a href="#quiz" class="px-8 py-4 bg-transparent border-2 border-aurea-rosegold text-aurea-dark hover:bg-aurea-accent/30 rounded-full font-medium tracking-widest text-xs transition-all duration-300 uppercase">
+                            Hacer Skin Quiz
+                        </a>
+                    </div>
+                    
+                    <!-- Stats / Confianza de marca -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-aurea-accent/30 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl text-aurea-dark font-bold">100%</p>
+                            <p class="text-xxs sm:text-xs text-gray-500 uppercase tracking-widest">Cruelty Free</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl text-aurea-dark font-bold">15+</p>
+                            <p class="text-xxs sm:text-xs text-gray-500 uppercase tracking-widest">Marcas Premium</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl text-aurea-dark font-bold">98%</p>
+                            <p class="text-xxs sm:text-xs text-gray-500 uppercase tracking-widest">Satisfechas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen del Hero (Estilo Editorial) -->
+                <div class="order-1 lg:order-2 flex justify-center relative">
+                    <div class="relative w-72 h-[350px] sm:w-[380px] sm:h-[480px] md:w-[420px] md:h-[520px]">
+                        <!-- Marco elegante de oro rosa -->
+                        <div class="absolute inset-0 border-2 border-aurea-rosegold/40 rounded-2xl transform translate-x-4 translate-y-4"></div>
+                        <!-- Imagen principal de belleza (Generada mediante SVG estilizado para carga instantánea y perfecta estética) -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-aurea-accent to-aurea-rosegold rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=1000');"></div>
+                            <div class="relative text-center p-6 bg-white/70 backdrop-blur-sm m-4 rounded-xl border border-white/40">
+                                <span class="font-serif italic text-lg text-aurea-dark block">"La belleza comienza en tu propia piel"</span>
+                                <span class="text-[10px] tracking-widest text-aurea-gold block mt-2 font-semibold">AURÉA BEAUTY</span>
+                            </div>
+                        </div>
+                        <!-- Pequeño adorno flotante -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border border-aurea-accent/50 hidden sm:flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-aurea-accent flex items-center justify-center text-aurea-dark">
+                                <i class="fa-solid fa-sparkles"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-aurea-dark">Ácido Hialurónico</p>
+                                <p class="text-[10px] text-gray-500">Premium Glow Gold</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND BAR (Logotipos de marcas famosas integradas en nuestro catálogo) -->
+    <section class="bg-white py-10 border-y border-aurea-accent/20">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-center text-xs tracking-[0.25em] text-gray-400 uppercase font-semibold mb-6">Distribuidor Autorizado de Marcas Selectas</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <span class="font-serif text-lg sm:text-2xl tracking-widest font-semibold text-aurea-dark">CHANEL</span>
+                <span class="font-serif text-lg sm:text-2xl tracking-widest font-semibold text-aurea-dark">DIOR</span>
+                <span class="font-serif text-lg sm:text-2xl tracking-widest font-semibold text-aurea-dark">LANCÔME</span>
+                <span class="font-serif text-lg sm:text-2xl tracking-widest font-semibold text-aurea-dark">ESTÉE LAUDER</span>
+                <span class="font-serif text-lg sm:text-2xl tracking-widest font-semibold text-aurea-dark">SHISEIDO</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKIN QUIZ SECCIÓN INTERACTIVA -->
+    <section id="quiz" class="py-20 bg-aurea-blush relative">
+        <div class="absolute inset-0 bg-[radial-gradient(#E0A899_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="bg-white rounded-3xl shadow-xl border border-aurea-accent/40 p-6 sm:p-12 text-center">
+                <span class="text-xs font-semibold tracking-[0.3em] text-aurea-rosegold uppercase">Diagnóstico Personalizado</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-aurea-dark mt-2 mb-4">¿Cuál es tu rutina Auréa ideal?</h2>
+                <p class="text-sm text-gray-600 max-w-xl mx-auto mb-8 font-light">
+                    Responde estas 3 sencillas preguntas. Nuestro algoritmo desarrollado por dermatólogos recomendará el maquillaje y tratamiento idóneo para ti.
+                </p>
+
+                <!-- Contenedor del Quiz -->
+                <div id="quizContainer" class="bg-aurea-sand/60 p-6 sm:p-8 rounded-2xl border border-aurea-accent/30 text-left">
+                    
+                    <!-- Paso 1 -->
+                    <div id="step1" class="space-y-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-aurea-rosegold font-bold uppercase tracking-wider">Pregunta 1 de 3</span>
+                            <span class="w-1/3 bg-gray-200 h-1.5 rounded-full"><span class="block bg-aurea-rosegold h-1.5 rounded-full w-1/3"></span></span>
+                        </div>
+                        <h3 class="font-serif text-lg sm:text-xl text-aurea-dark font-semibold">¿Cómo describirías el comportamiento de tu piel durante el día?</h3>
+                        <div class="grid grid-cols-1 gap-3 pt-2">
+                            <button onclick="setQuizAnswer(1, 'grasa')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-droplet text-aurea-rosegold mr-2"></i> Suele brillar rápidamente, especialmente en la zona T.
+                            </button>
+                            <button onclick="setQuizAnswer(1, 'seca')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-wind text-aurea-rosegold mr-2"></i> La siento tirante, opaca y a veces con descamación áspera.
+                            </button>
+                            <button onclick="setQuizAnswer(1, 'mixta')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-wand-magic-sparkles text-aurea-rosegold mr-2"></i> Frente brillante pero mejillas secas o normales.
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2 (Oculto inicialmente) -->
+                    <div id="step2" class="hidden space-y-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-aurea-rosegold font-bold uppercase tracking-wider">Pregunta 2 de 3</span>
+                            <span class="w-1/3 bg-gray-200 h-1.5 rounded-full"><span class="block bg-aurea-rosegold h-1.5 rounded-full w-2/3"></span></span>
+                        </div>
+                        <h3 class="font-serif text-lg sm:text-xl text-aurea-dark font-semibold">¿Cuál es tu principal objetivo para tu piel?</h3>
+                        <div class="grid grid-cols-1 gap-3 pt-2">
+                            <button onclick="setQuizAnswer(2, 'hidratar')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-water text-aurea-rosegold mr-2"></i> Conseguir una hidratación profunda y luminosidad natural.
+                            </button>
+                            <button onclick="setQuizAnswer(2, 'mate')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-spray-can text-aurea-rosegold mr-2"></i> Controlar imperfecciones y lograr un acabado mate de larga duración.
+                            </button>
+                            <button onclick="setQuizAnswer(2, 'edad')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-hourglass text-aurea-rosegold mr-2"></i> Prevenir arrugas, líneas de expresión y flacidez.
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3 (Oculto inicialmente) -->
+                    <div id="step3" class="hidden space-y-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-aurea-rosegold font-bold uppercase tracking-wider">Pregunta 3 de 3</span>
+                            <span class="w-1/3 bg-gray-200 h-1.5 rounded-full"><span class="block bg-aurea-rosegold h-1.5 rounded-full w-full"></span></span>
+                        </div>
+                        <h3 class="font-serif text-lg sm:text-xl text-aurea-dark font-semibold">¿Qué tipo de acabado prefieres en tu maquillaje diario?</h3>
+                        <div class="grid grid-cols-1 gap-3 pt-2">
+                            <button onclick="setQuizAnswer(3, 'dewy')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-sun text-aurea-rosegold mr-2"></i> Acabado jugoso ("Dewy"), súper fresco y ultra-hidratado.
+                            </button>
+                            <button onclick="setQuizAnswer(3, 'natural')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-leaf text-aurea-rosegold mr-2"></i> Acabado aterciopelado satinado, natural y ligero.
+                            </button>
+                            <button onclick="setQuizAnswer(3, 'alta')" class="w-full text-left p-4 bg-white hover:bg-aurea-accent/30 rounded-xl border border-gray-200 hover:border-aurea-rosegold transition-all duration-300 text-sm">
+                                <i class="fa-solid fa-star text-aurea-rosegold mr-2"></i> Alta cobertura que no se mueva durante todo el día.
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Resultados (Oculto inicialmente) -->
+                    <div id="quizResult" class="hidden space-y-6 text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-aurea-accent/60 text-aurea-dark mb-2 animate-bounce">
+                            <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-aurea-dark font-semibold">¡Diagnóstico Completado con Éxito!</h3>
+                        <div id="resultText" class="text-sm text-gray-700 bg-white p-6 rounded-xl border border-aurea-accent/40 max-w-lg mx-auto">
+                            <!-- Se rellenará con JS -->
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button onclick="resetQuiz()" class="px-6 py-3 bg-gray-200 text-aurea-dark hover:bg-gray-300 text-xs tracking-wider rounded-full font-medium transition-all duration-300">
+                                Repetir Test
+                            </button>
+                            <a href="#productos" class="px-6 py-3 bg-aurea-dark text-white hover:bg-aurea-rosegold text-xs tracking-wider rounded-full font-medium transition-all duration-300">
+                                Ver Productos Recomendados
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DE MARCA / TIENDA -->
+    <section id="productos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabecera de la sección -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.3em] text-aurea-rosegold uppercase">Lujo Selección</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-aurea-dark mt-2 mb-4">Nuestra Boutique de Marcas</h2>
+                <div class="w-16 h-0.5 bg-aurea-gold mx-auto mb-4"></div>
+                <p class="text-sm sm:text-base text-gray-600 font-light">
+                    Productos originales y de edición limitada seleccionados rigurosamente. Fórmulas limpias, activos botánicos avanzados y texturas inigualables.
+                </p>
+            </div>
+
+            <!-- Filtros de Categorías -->
+            <div class="flex justify-center flex-wrap gap-4 mb-12">
+                <button onclick="filterProducts('todos')" id="filter-todos" class="category-filter-btn px-6 py-2.5 text-xs font-semibold tracking-widest rounded-full bg-aurea-dark text-white shadow-sm transition-all duration-300">
+                    TODOS
+                </button>
+                <button onclick="filterProducts('skincare')" id="filter-skincare" class="category-filter-btn px-6 py-2.5 text-xs font-semibold tracking-widest rounded-full bg-aurea-blush text-aurea-dark hover:bg-aurea-accent/40 transition-all duration-300">
+                    SKINCARE
+                </button>
+                <button onclick="filterProducts('maquillaje')" id="filter-maquillaje" class="category-filter-btn px-6 py-2.5 text-xs font-semibold tracking-widest rounded-full bg-aurea-blush text-aurea-dark hover:bg-aurea-accent/40 transition-all duration-300">
+                    MAQUILLAJE
+                </button>
+                <button onclick="filterProducts('best-sellers')" id="filter-best-sellers" class="category-filter-btn px-6 py-2.5 text-xs font-semibold tracking-widest rounded-full bg-aurea-blush text-aurea-dark hover:bg-aurea-accent/40 transition-all duration-300">
+                    MÁS VENDIDOS ⭐
+                </button>
+            </div>
+
+            <!-- Grilla de Productos -->
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Los productos se generarán dinámicamente con JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICIOS EXCLUSIVOS -->
+    <section id="servicios" class="py-20 bg-[#FAF7F5] border-t border-aurea-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabecera -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.3em] text-aurea-rosegold uppercase">Experiencias a la Medida</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-aurea-dark mt-2 mb-4">Servicios Auréa Concierge</h2>
+                <div class="w-16 h-0.5 bg-aurea-gold mx-auto mb-4"></div>
+                <p class="text-sm text-gray-600 font-light">
+                    No solo vendemos productos; diseñamos rituales de cuidado y asesoramiento premium para realzar tu belleza intrínseca.
+                </p>
+            </div>
+
+            <!-- Tarjetas de Servicios -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-aurea-accent/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-full bg-aurea-blush flex items-center justify-center text-aurea-rosegold text-2xl">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-aurea-dark">Skin Consultation Virtual</h3>
+                        <p class="text-xs text-aurea-rosegold uppercase tracking-widest font-semibold">1-on-1 vía Zoom • 45 min</p>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">
+                            Una sesión privada con una dermocosmetóloga de nuestro equipo para analizar las necesidades reales de tu piel y crear tu mapa de tratamiento personalizado.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-aurea-accent/20 mt-6 flex items-center justify-between">
+                        <span class="font-serif text-lg font-bold text-aurea-dark">$45.00</span>
+                        <button onclick="openBookingModal('Skin Consultation Virtual')" class="px-5 py-2.5 bg-aurea-dark text-white rounded-full text-xs font-medium tracking-widest hover:bg-aurea-rosegold transition-all duration-300">
+                            RESERVAR
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-aurea-accent/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-full bg-aurea-blush flex items-center justify-center text-aurea-rosegold text-2xl">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-aurea-dark">Makeup Masterclass Privada</h3>
+                        <p class="text-xs text-aurea-rosegold uppercase tracking-widest font-semibold">En Estudio o Virtual • 90 min</p>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">
+                            Aprende técnicas profesionales de contouring, aplicación de iluminador líquido y cómo transformar un maquillaje de diario en uno de noche sofisticado.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-aurea-accent/20 mt-6 flex items-center justify-between">
+                        <span class="font-serif text-lg font-bold text-aurea-dark">$85.00</span>
+                        <button onclick="openBookingModal('Makeup Masterclass Privada')" class="px-5 py-2.5 bg-aurea-dark text-white rounded-full text-xs font-medium tracking-widest hover:bg-aurea-rosegold transition-all duration-300">
+                            RESERVAR
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-aurea-accent/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-full bg-aurea-blush flex items-center justify-center text-aurea-rosegold text-2xl">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-aurea-dark">Bridal & Event Glow Prep</h3>
+                        <p class="text-xs text-aurea-rosegold uppercase tracking-widest font-semibold">Exclusivo en Estudio • 120 min</p>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">
+                            Tratamiento de hidratación intensiva facial con partículas de oro de 24k más un maquillaje de alta definición a prueba de agua y flashes para tu gran día.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-aurea-accent/20 mt-6 flex items-center justify-between">
+                        <span class="font-serif text-lg font-bold text-aurea-dark">$150.00</span>
+                        <button onclick="openBookingModal('Bridal & Event Glow Prep')" class="px-5 py-2.5 bg-aurea-dark text-white rounded-full text-xs font-medium tracking-widest hover:bg-aurea-rosegold transition-all duration-300">
+                            RESERVAR
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NUESTRA FILOSOFÍA / SOBRE NOSOTROS -->
+    <section id="nosotros" class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Bloque de imágenes artísticas -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4 relative">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=600" alt="Detalle de Maquillaje y Brochas" class="rounded-2xl shadow-md w-full object-cover h-48 sm:h-64">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=600" alt="Modelo de belleza de Auréa" class="rounded-2xl shadow-md w-full object-cover h-40 sm:h-52">
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=600" alt="Mascarilla de Arcilla Skincare" class="rounded-2xl shadow-md w-full object-cover h-40 sm:h-52">
+                        <img src="https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&q=80&w=600" alt="Suero de Skincare Lujoso" class="rounded-2xl shadow-md w-full object-cover h-48 sm:h-64">
+                    </div>
+                </div>
+
+                <!-- Bloque de texto editorial -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-aurea-rosegold uppercase">El alma de nuestra marca</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-aurea-dark leading-tight">
+                        Rediseñando la belleza con un estándar de pureza absoluto.
+                    </h2>
+                    <p class="text-sm sm:text-base text-gray-600 font-light leading-relaxed">
+                        Fundada por entusiastas del cuidado clínico de la piel y artistas del maquillaje editorial, **Auréa Beauty** nace para romper la barrera entre la estética cosmética de alta definición y la salud cutánea.
+                    </p>
+                    <p class="text-sm sm:text-base text-gray-600 font-light leading-relaxed">
+                        Creemos que el maquillaje no debe ocultar quién eres, sino actuar como una extensión de tu piel, protegida y nutrida previamente por los elixires botánicos y activos clínicos más nobles de las mejores marcas del mundo.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-aurea-rosegold text-xl"><i class="fa-solid fa-circle-check"></i></span>
+                            <div>
+                                <h4 class="font-serif font-bold text-aurea-dark text-sm sm:text-base">Garantía de Autenticidad</h4>
+                                <p class="text-xs text-gray-500">100% de productos importados directamente de laboratorios oficiales.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-aurea-rosegold text-xl"><i class="fa-solid fa-circle-check"></i></span>
+                            <div>
+                                <h4 class="font-serif font-bold text-aurea-dark text-sm sm:text-base">Compromiso Sustentable</h4>
+                                <p class="text-xs text-gray-500">Empaques reciclables y libres de plásticos de un solo uso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS (RESEÑAS DEL GLOW CLUB) -->
+    <section class="py-20 bg-aurea-blush">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.3em] text-aurea-rosegold uppercase">Comunidad Real</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-aurea-dark mt-2">La Experiencia Auréa Glow</h2>
+            </div>
+
+            <!-- Carrusel / Grid de Testimonios -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonio 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-aurea-accent/30 shadow-sm relative">
+                    <div class="flex text-aurea-gold mb-4 text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 font-light italic mb-6 leading-relaxed">
+                        "Mi piel cambió radicalmente después de hacer el Skin Quiz y empezar a usar el Suero de Ácido Hialurónico Dior. La asesoría virtual es impecable; de verdad te recomiendan lo que tu piel necesita."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-aurea-accent flex items-center justify-center font-bold text-xs text-aurea-dark">
+                            VM
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-aurea-dark">Valeria Mendoza</p>
+                            <p class="text-[10px] text-gray-400">Clienta de Skincare Vip</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-aurea-accent/30 shadow-sm relative">
+                    <div class="flex text-aurea-gold mb-4 text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 font-light italic mb-6 leading-relaxed">
+                        "La Base Chanel Glow es de otro planeta. Es ligera pero cubre perfecto y me deja un brillo satinado espectacular. Comprar en Auréa es sinónimo de confianza absoluta."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-aurea-accent flex items-center justify-center font-bold text-xs text-aurea-dark">
+                            SO
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-aurea-dark">Sofía Ortega</p>
+                            <p class="text-[10px] text-gray-400">Amante del Maquillaje</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-aurea-accent/30 shadow-sm relative">
+                    <div class="flex text-aurea-gold mb-4 text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 font-light italic mb-6 leading-relaxed">
+                        "Tomé la Masterclass Privada y aprendí más que en meses viendo tutoriales de internet. Las técnicas para contornear mi rostro son súper fáciles de aplicar. ¡Súper recomendado!"
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-aurea-accent flex items-center justify-center font-bold text-xs text-aurea-dark">
+                            CM
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-aurea-dark">Camila Morelli</p>
+                            <p class="text-[10px] text-gray-400">Estudiante de Masterclass</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER / UNIRSE AL CLUB -->
+    <section class="py-20 bg-aurea-dark text-white relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-80 h-80 bg-aurea-rosegold/10 rounded-full filter blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-aurea-gold/10 rounded-full filter blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-6">
+            <span class="text-xs font-semibold tracking-[0.3em] text-aurea-rosegold uppercase">Únete al Auréa Club</span>
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white">Consigue 15% de Descuento</h2>
+            <p class="text-sm sm:text-base text-gray-300 font-light max-w-xl mx-auto leading-relaxed">
+                Regístrate hoy para recibir acceso prioritario a nuevos lanzamientos, trucos de maquillaje profesionales y promociones exclusivas.
+            </p>
+            
+            <form onsubmit="handleNewsletter(event)" class="max-w-md mx-auto pt-4">
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" id="newsletterEmail" placeholder="Tu correo electrónico" required class="flex-grow px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-aurea-rosegold text-sm">
+                    <button type="submit" class="px-6 py-3 bg-aurea-rosegold text-aurea-dark hover:bg-white rounded-full font-medium tracking-widest text-xs transition-all duration-300 uppercase">
+                        SUSCRIBIRME
+                    </button>
+                </div>
+                <p class="text-[10px] text-gray-400 mt-3 font-light">Respetamos tu privacidad. Puedes darte de baja en cualquier momento.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1A1211] text-gray-300 py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Col 1: Logo y Acerca de -->
+                <div class="space-y-4">
+                    <span class="font-serif text-2xl tracking-widest font-semibold text-white block">
+                        AURÉA <span class="text-xs tracking-widest font-sans font-light block -mt-1 text-aurea-rosegold">BEAUTY</span>
+                    </span>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">
+                        Curaduría experta del maquillaje y cuidado de la piel más sofisticado a nivel mundial. Elevando tu estándar de belleza día tras día.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-aurea-rosegold transition-colors text-lg" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-aurea-rosegold transition-colors text-lg" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-aurea-rosegold transition-colors text-lg" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-aurea-rosegold transition-colors text-lg" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Enlaces rápidos -->
+                <div>
+                    <h4 class="font-serif text-white font-semibold text-sm tracking-wider mb-4 uppercase">Explorar</h4>
+                    <ul class="space-y-2 text-xs font-light">
+                        <li><a href="#inicio" class="hover:text-aurea-rosegold transition-colors">Inicio</a></li>
+                        <li><a href="#productos" class="hover:text-aurea-rosegold transition-colors">Tienda de Marcas</a></li>
+                        <li><a href="#servicios" class="hover:text-aurea-rosegold transition-colors">Servicios Exclusivos</a></li>
+                        <li><a href="#quiz" class="hover:text-aurea-rosegold transition-colors">Skin Quiz</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Marcas Aliadas -->
+                <div>
+                    <h4 class="font-serif text-white font-semibold text-sm tracking-wider mb-4 uppercase">Marcas de Lujo</h4>
+                    <ul class="space-y-2 text-xs font-light text-gray-400">
+                        <li>Chanel Cosméticos</li>
+                        <li>Dior Backstage</li>
+                        <li>Lancôme Paris</li>
+                        <li>Estée Lauder Clinique</li>
+                        <li>Shiseido Ginza</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contacto / Ubicación -->
+                <div>
+                    <h4 class="font-serif text-white font-semibold text-sm tracking-wider mb-4 uppercase">Atención al Cliente</h4>
+                    <ul class="space-y-2 text-xs font-light text-gray-400">
+                        <li><i class="fa-solid fa-location-dot mr-2 text-aurea-rosegold"></i> Av. de la Moda 1024, Suite Lujo</li>
+                        <li><i class="fa-solid fa-phone mr-2 text-aurea-rosegold"></i> +1 (555) 019-2834</li>
+                        <li><i class="fa-solid fa-envelope mr-2 text-aurea-rosegold"></i> hola@aureabeauty.com</li>
+                        <li><i class="fa-solid fa-clock mr-2 text-aurea-rosegold"></i> Lun - Sáb: 10:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copy y Legales -->
+            <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 font-light">
+                <p>&copy; 2026 Auréa Beauty. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-aurea-rosegold transition-colors">Políticas de Privacidad</a>
+                    <a href="#" class="hover:text-aurea-rosegold transition-colors">Términos del Servicio</a>
+                    <a href="#" class="hover:text-aurea-rosegold transition-colors">Envíos & Devoluciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SHOPPING CART PANEL (SLIDE-OUT) -->
+    <div id="cartPanel" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300 opacity-0 hidden">
+        <!-- Backdrop -->
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black/50 backdrop-blur-sm pointer-events-auto"></div>
+        
+        <!-- Contenedor del panel lateral -->
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-aurea-sand shadow-2xl pointer-events-auto flex flex-col justify-between border-l border-aurea-accent/40">
+            
+            <!-- Cabecera del Carrito -->
+            <div class="p-6 border-b border-aurea-accent/30 flex items-center justify-between bg-white">
+                <div class="flex items-center space-x-2">
+                    <span class="font-serif text-xl font-bold text-aurea-dark">Tu Bolsa de Compras</span>
+                    <span id="cartPanelCount" class="px-2 py-0.5 text-xs bg-aurea-accent/60 text-aurea-dark rounded-full font-bold">0</span>
+                </div>
+                <button onclick="toggleCart()" class="p-2 text-aurea-dark hover:text-aurea-rosegold transition-colors" aria-label="Cerrar Carrito">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Cuerpo del Carrito (Lista de productos) -->
+            <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-6 space-y-4">
+                <!-- Se llenará dinámicamente con JS -->
+                <div id="emptyCartMessage" class="text-center py-20 space-y-4">
+                    <div class="w-16 h-16 bg-aurea-blush rounded-full flex items-center justify-center mx-auto text-aurea-rosegold text-2xl">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <p class="text-sm text-gray-500 font-light">Tu bolsa de compras está vacía.</p>
+                    <button onclick="toggleCart()" class="text-xs font-semibold tracking-widest text-aurea-rosegold underline uppercase">Explorar productos</button>
+                </div>
+            </div>
+
+            <!-- Footer del Carrito (Resumen de compra) -->
+            <div id="cartFooter" class="p-6 border-t border-aurea-accent/30 bg-white space-y-4 hidden">
+                <div class="flex justify-between text-sm">
+                    <span class="font-light text-gray-600">Subtotal</span>
+                    <span id="cartSubtotal" class="font-bold text-aurea-dark">$0.00</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="font-light text-gray-600">Envío</span>
+                    <span class="text-green-600 font-medium">¡Gratis!</span>
+                </div>
+                <div class="border-t border-dashed border-aurea-accent/40 my-2"></div>
+                <div class="flex justify-between text-base">
+                    <span class="font-serif font-bold text-aurea-dark">Total estimado</span>
+                    <span id="cartTotal" class="font-serif font-bold text-aurea-dark">$0.00</span>
+                </div>
+                
+                <!-- Acciones -->
+                <div class="space-y-2 pt-2">
+                    <button onclick="checkoutCart()" class="w-full py-4 bg-aurea-dark text-white rounded-full text-xs font-medium tracking-widest hover:bg-aurea-rosegold transition-all duration-300 uppercase">
+                        FINALIZAR COMPRA
+                    </button>
+                    <button onclick="clearCart()" class="w-full py-2.5 bg-transparent border border-gray-200 text-gray-500 hover:text-red-500 hover:bg-red-50 rounded-full text-xs transition-all duration-300">
+                        VACIAR BOLSA
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BOOKING MODAL (FORMULARIO RESERVA DE SERVICIOS) -->
+    <div id="bookingModal" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300 opacity-0 hidden">
+        <!-- Backdrop -->
+        <div onclick="closeBookingModal()" class="absolute inset-0 bg-black/50 backdrop-blur-sm pointer-events-auto"></div>
+        
+        <!-- Modal Container -->
+        <div class="absolute inset-x-4 top-1/2 -translate-y-1/2 md:max-w-md md:mx-auto bg-aurea-sand rounded-3xl shadow-2xl p-6 sm:p-8 pointer-events-auto border border-aurea-accent/40">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="font-serif text-xl sm:text-2xl text-aurea-dark font-bold">Solicitud de Reserva</h3>
+                <button onclick="closeBookingModal()" class="text-gray-500 hover:text-aurea-dark"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            
+            <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-4">
+                <!-- Servicio seleccionado auto-completado -->
+                <div>
+                    <label class="block text-xs font-semibold text-aurea-dark uppercase tracking-wider mb-1.5">Servicio Seleccionado</label>
+                    <input type="text" id="selectedService" readonly class="w-full px-4 py-2.5 bg-white border border-aurea-accent/50 text-aurea-dark rounded-xl text-sm font-semibold focus:outline-none">
+                </div>
+                
+                <!-- Campos del usuario -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Nombre Completo</label>
+                        <input type="text" required placeholder="Ej. Ana Pérez" class="w-full px-4 py-2.5 bg-white border border-gray-200 text-aurea-dark rounded-xl text-sm focus:outline-none focus:border-aurea-rosegold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Teléfono Celular</label>
+                        <input type="tel" required placeholder="Ej. +1 555-1234" class="w-full px-4 py-2.5 bg-white border border-gray-200 text-aurea-dark rounded-xl text-sm focus:outline-none focus:border-aurea-rosegold">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Correo Electrónico</label>
+                    <input type="email" required placeholder="ana.perez@email.com" class="w-full px-4 py-2.5 bg-white border border-gray-200 text-aurea-dark rounded-xl text-sm focus:outline-none focus:border-aurea-rosegold">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Fecha de Preferencia</label>
+                        <input type="date" required class="w-full px-4 py-2.5 bg-white border border-gray-200 text-aurea-dark rounded-xl text-sm focus:outline-none focus:border-aurea-rosegold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Horario Sugerido</label>
+                        <select required class="w-full px-4 py-2.5 bg-white border border-gray-200 text-aurea-dark rounded-xl text-sm focus:outline-none focus:border-aurea-rosegold">
+                            <option value="">Seleccionar...</option>
+                            <option value="mañana">Mañana (10:00 - 13:00)</option>
+                            <option value="tarde">Tarde (14:00 - 18:00)</option>
+                            <option value="noche">Noche (18:00 - 20:00)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3.5 bg-aurea-dark text-white hover:bg-aurea-rosegold rounded-full text-xs font-semibold tracking-widest transition-all duration-300 uppercase">
+                        SOLICITAR CITA DE LUJO
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIONES PERSONALIZADAS (Para evitar usar alert) -->
+    <div id="customToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-4 bg-aurea-dark text-white rounded-2xl shadow-xl transition-all duration-300 transform translate-y-20 opacity-0 flex items-center space-x-3 text-sm pointer-events-none">
+        <i class="fa-solid fa-sparkles text-aurea-rosegold"></i>
+        <span id="toastMessage">Producto añadido</span>
+    </div>
+
+    <!-- SCRIPTS JS DE LÓGICA E INTERACTIVIDAD -->
+    <script>
+        // --- BASE DE DATOS DE PRODUCTOS PREMIUM ---
+        const products = [
+            {
+                id: 'prod1',
+                name: 'Luminous Hydration Hydra-Serum',
+                brand: 'Lancôme Paris',
+                category: 'skincare',
+                price: 78.00,
+                stars: 5,
+                tag: 'BEST-SELLER',
+                image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'prod2',
+                name: 'Teint Couture Glow Velvet Foundation',
+                brand: 'Chanel Cosméticos',
+                category: 'maquillaje',
+                price: 64.00,
+                stars: 5,
+                tag: 'RECOMENDADO',
+                image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'prod3',
+                name: 'Ultimate Advanced Anti-Age Concentrate',
+                brand: 'Shiseido Ginza',
+                category: 'skincare',
+                price: 110.00,
+                stars: 5,
+                tag: 'NUEVO',
+                image: 'https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'prod4',
+                name: 'Rouge Couture Liquid Satin Lipstick',
+                brand: 'Dior Backstage',
+                category: 'maquillaje',
+                price: 45.00,
+                stars: 4,
+                tag: 'POPULAR',
+                image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'prod5',
+                name: 'Bronze Gold Sculpting Powder',
+                brand: 'Estée Lauder Clinique',
+                category: 'maquillaje',
+                price: 52.00,
+                stars: 5,
+                tag: 'BEST-SELLER',
+                image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=1000'
+            },
+            {
+                id: 'prod6',
+                name: 'Micro-Exfoliating Clean Glow Mousse',
+                brand: 'Lancôme Paris',
+                category: 'skincare',
+                price: 38.00,
+                stars: 4,
+                tag: 'VEGANO',
+                image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'prod7',
+                name: 'Prestige Micro-Huile de Rose Suero',
+                brand: 'Dior Backstage',
+                category: 'skincare',
+                price: 145.00,
+                stars: 5,
+                tag: 'NUEVO',
+                image: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'prod8',
+                name: 'Volume Effet Mascara Intense Black',
+                brand: 'Chanel Cosméticos',
+                category: 'maquillaje',
+                price: 42.00,
+                stars: 5,
+                tag: 'EDICIÓN LIMITADA',
+                image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=600'
+            }
+        ];
+
+        // --- ESTADOS DE LA APLICACIÓN (CARRITO Y SECCIÓN ACTIVA) ---
+        let cart = [];
+        let currentQuizAnswers = {};
+
+        // Iniciar página
+        window.addEventListener('load', () => {
+            renderProducts(products);
+            setupHeaderScroll();
+        });
+
+        // --- RENDERIZACIÓN DE PRODUCTOS EN TIENDA ---
+        function renderProducts(productsList) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            productsList.forEach(product => {
+                // Estrellas HTML
+                let starsHtml = '';
+                for(let i=1; i<=5; i++) {
+                    starsHtml += `<i class="fa-${i <= product.stars ? 'solid' : 'regular'} fa-star text-aurea-gold"></i>`;
+                }
+
+                const card = `
+                    <div class="group bg-white rounded-2xl overflow-hidden border border-aurea-accent/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                        <div class="relative overflow-hidden bg-aurea-blush">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-aurea-dark text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full uppercase border border-aurea-accent/40 z-10">
+                                ${product.tag}
+                            </span>
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                            <!-- Botón rápido Añadir al carrito al pasar mouse -->
+                            <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <button onclick="addToCart('${product.id}')" class="px-5 py-2.5 bg-white text-aurea-dark hover:bg-aurea-rosegold hover:text-white rounded-full text-xs font-bold tracking-widest transition-all duration-300 shadow-md">
+                                    AÑADIR A LA BOLSA <i class="fa-solid fa-plus ml-1.5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Info del Producto -->
+                        <div class="p-5 space-y-2 flex-grow flex flex-col justify-between">
+                            <div class="space-y-1">
+                                <span class="text-xxs tracking-[0.2em] text-aurea-rosegold uppercase font-bold">${product.brand}</span>
+                                <h3 class="font-serif text-sm font-semibold text-aurea-dark group-hover:text-aurea-rosegold transition-colors line-clamp-2">${product.name}</h3>
+                                <div class="flex items-center space-x-1 text-[10px]">
+                                    ${starsHtml}
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-aurea-accent/20">
+                                <span class="font-serif font-bold text-aurea-dark text-lg">$${product.price.toFixed(2)}</span>
+                                <button onclick="addToCart('${product.id}')" class="sm:hidden px-3 py-1.5 bg-aurea-dark text-white rounded-full text-xxs tracking-widest">
+                                    COMPRAR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // --- FILTRADO DE PRODUCTOS ---
+        function filterProducts(category) {
+            // Actualizar clases de botones
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-aurea-dark', 'text-white');
+                btn.classList.add('bg-aurea-blush', 'text-aurea-dark');
+            });
+
+            const activeBtn = document.getElementById(`filter-${category}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-aurea-blush', 'text-aurea-dark');
+                activeBtn.classList.add('bg-aurea-dark', 'text-white');
+            }
+
+            // Filtrar lógica
+            if(category === 'todos') {
+                renderProducts(products);
+            } else if (category === 'best-sellers') {
+                const best = products.filter(p => p.tag === 'BEST-SELLER');
+                renderProducts(best);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        }
+
+        // --- SISTEMA DEL CARRITO DE COMPRAS ---
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if(!product) return;
+
+            const existingItem = cart.find(item => item.product.id === productId);
+            if(existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ product, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast(`"${product.name}" añadido a tu bolsa.`);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.product.id !== productId);
+            updateCartUI();
+        }
+
+        function changeQuantity(productId, amount) {
+            const item = cart.find(item => item.product.id === productId);
+            if(!item) return;
+
+            item.quantity += amount;
+            if(item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                updateCartUI();
+            }
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartUI();
+            showToast("Bolsa de compras vaciada.");
+        }
+
+        // --- SISTEMA INTERACTIVO DE SKIN QUIZ ---
+        function setQuizAnswer(step, answer) {
+            currentQuizAnswers[step] = answer;
+            
+            // Pasar al siguiente paso
+            if(step === 1) {
+                document.getElementById('step1').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+            } else if (step === 2) {
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+            } else if (step === 3) {
+                document.getElementById('step3').classList.add('hidden');
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            const resultBox = document.getElementById('quizResult');
+            const resultText = document.getElementById('resultText');
+            resultBox.classList.remove('hidden');
+
+            const { 1: skin, 2: goal, 3: finish } = currentQuizAnswers;
+
+            let recommendation = "";
+            let recommendedProducts = [];
+
+            if(skin === 'grasa') {
+                recommendation = "Para tu **piel con tendencia a brillar**, te recomendamos una rutina matificante y equilibrante. Usa limpiadores suaves y fórmulas no comedogénicas.";
+                recommendedProducts = ["Teint Couture Glow Velvet Foundation", "Micro-Exfoliating Clean Glow Mousse"];
+            } else if(skin === 'seca') {
+                recommendation = "Tu **piel deshidratada** necesita un shock de nutrientes. Prioriza sueros cargados de ácido hialurónico y bases ultra sedosas.";
+                recommendedProducts = ["Luminous Hydration Hydra-Serum", "Prestige Micro-Huile de Rose Suero"];
+            } else {
+                recommendation = "Tienes una **piel mixta**. El secreto está en equilibrar: hidratar las áreas resecas y sellar ligeramente con polvos de seda en la zona T.";
+                recommendedProducts = ["Bronze Gold Sculpting Powder", "Rouge Couture Liquid Satin Lipstick"];
+            }
+
+            resultText.innerHTML = `
+                <p class="font-serif text-lg text-aurea-dark font-semibold mb-3">Rutina Recomendada:</p>
+                <p class="text-sm text-gray-600 mb-4">${recommendation}</p>
+                <p class="text-xs text-aurea-rosegold font-bold tracking-widest uppercase">Te sugerimos combinar:</p>
+                <ul class="text-xs text-gray-700 list-disc list-inside mt-2 space-y-1">
+                    ${recommendedProducts.map(p => `<li>${p}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        function resetQuiz() {
+            currentQuizAnswers = {};
+            document.getElementById('quizResult').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step1').classList.remove('hidden');
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cartItemsContainer');
+            const cartCount = document.getElementById('cartCount');
+            const cartPanelCount = document.getElementById('cartPanelCount');
+            const cartFooter = document.getElementById('cartFooter');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const cartSubtotal = document.getElementById('cartSubtotal');
+            const cartTotal = document.getElementById('cartTotal');
+
+            // Actualizar contadores
+            const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            cartPanelCount.textContent = totalItems;
+
+            if(cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                cartFooter.classList.add('hidden');
+                cartItemsContainer.innerHTML = '';
+                cartItemsContainer.appendChild(emptyCartMessage);
+                return;
+            }
+
+            emptyCartMessage.style.display = 'none';
+            cartFooter.classList.remove('hidden');
+            cartItemsContainer.innerHTML = '';
+
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.product.price * item.quantity;
+                subtotal += itemTotal;
+
+                const itemHtml = `
+                    <div class="flex items-center space-x-4 bg-white p-4 rounded-xl border border-aurea-accent/30 shadow-sm">
+                        <img src="${item.product.image}" alt="${item.product.name}" class="w-16 h-16 object-cover rounded-lg border border-gray-100 flex-shrink-0">
+                        <div class="flex-grow min-w-0">
+                            <span class="text-[9px] tracking-wider text-aurea-rosegold uppercase font-semibold">${item.product.brand}</span>
+                            <h4 class="font-serif text-xs font-bold text-aurea-dark truncate">${item.product.name}</h4>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center space-x-2 border border-gray-200 rounded-full bg-aurea-sand/40">
+                                    <button onclick="changeQuantity('${item.product.id}', -1)" class="px-2 py-1 text-xs text-gray-500 hover:text-aurea-dark"><i class="fa-solid fa-minus"></i></button>
+                                    <span class="text-xs font-semibold text-aurea-dark">${item.quantity}</span>
+                                    <button onclick="changeQuantity('${item.product.id}', 1)" class="px-2 py-1 text-xs text-gray-500 hover:text-aurea-dark"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                                <span class="font-serif text-sm font-bold text-aurea-dark">$${itemTotal.toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart('${item.product.id}')" class="text-gray-300 hover:text-red-500 transition-colors" aria-label="Eliminar item">
+                            <i class="fa-solid fa-trash-can text-sm"></i>
+                        </button>
+                    </div>
+                `;
+                cartItemsContainer.innerHTML += itemHtml;
+            });
+
+            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            cartTotal.textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        function toggleCart() {
+            const panel = document.getElementById('cartPanel');
+            if(panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                setTimeout(() => {
+                    panel.classList.remove('opacity-0');
+                    panel.classList.add('opacity-100');
+                }, 10);
+            } else {
+                panel.classList.remove('opacity-100');
+                panel.classList.add('opacity-0');
+                setTimeout(() => {
+                    panel.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        document.getElementById('cartBtn').addEventListener('click', toggleCart);
+
+        function checkoutCart() {
+            showToast("Procesando tu pedido de lujo... ¡Muchas gracias por comprar en Auréa Beauty!");
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        // --- SISTEMA DE RESERVAS DE SERVICIOS (MODAL) ---
+        function openBookingModal(serviceName) {
+            document.getElementById('selectedService').value = serviceName;
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+            const service = document.getElementById('selectedService').value;
+            showToast(`¡Solicitud enviada! Nos pondremos en contacto para confirmar tu cita de "${service}".`);
+            closeBookingModal();
+            document.getElementById('bookingForm').reset();
+        }
+
+        // --- FORMULARIO DE NEWSLETTER ---
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            showToast(`¡Bienvenida al Auréa Club! Hemos enviado un obsequio especial de bienvenida a: ${email}`);
+            document.getElementById('newsletterEmail').value = '';
+        }
+
+        // --- NOTIFICACIONES TOAST MEJORADAS ---
+        function showToast(message) {
+            const toast = document.getElementById('customToast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+
+            // Mostrar
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            // Ocultar tras 4 segundos
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
+        }
+
+        // --- MENÚ MÓVIL RESPONSIVO ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // --- EFECTOS VISUALES AL HACER SCROLL EN EL HEADER ---
+        function setupHeaderScroll() {
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-1', 'shadow-md');
+                } else {
+                    header.classList.remove('py-1', 'shadow-md');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
